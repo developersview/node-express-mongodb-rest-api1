@@ -19,7 +19,7 @@ app.use('/api/v1/products', products_routes);
 
 const start = async () => {
     try {
-        await connetDB(process.env.MONGODB_URI);
+        await connetDB(process.env.DATABASE_URI);
         app.listen(PORT, () => {
             console.log(`${PORT} Yes I am connected`);
         });

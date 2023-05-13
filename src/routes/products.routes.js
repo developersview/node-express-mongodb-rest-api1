@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllProducts, getAllProductsTesting } = require('../controllers/products.controller');
+const { getAllProducts, getAllProductsTesting } = require('../controller/products.controller');
 
 //homepage for product api
 router.route("/").get(getAllProducts);
