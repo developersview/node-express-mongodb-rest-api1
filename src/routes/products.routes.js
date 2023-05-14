@@ -74,4 +74,34 @@ router.delete("/delete/:id", async (req, res) => {
     }
 })
 
+//filtration based on query params
+router.get("/get", async (req, res) => {
+    try {
+        const data = await Product.find(req.query);
+        res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+//sort data by name
+router.get("/getAllSorted/name", async (req, res) => {
+    try {
+        const data = await Product.find({}).sort('-name');
+        res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+//get only name and price
+router.get("/getNamePrice", async (req, res) => {
+    try {
+        const data = await Product.find({}).select('name price');
+        res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 module.exports = router;
