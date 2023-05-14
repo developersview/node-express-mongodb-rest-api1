@@ -5,7 +5,9 @@ const Product = require('../model/product');
 
 //homepage for product api
 router.get("/", (req, res) => {
-    res.status(200).json({ message: "Welcome to Product api home page" });
+    res.status(200).json({
+        message: "Welcome to Product api home page"
+    });
 })
 
 //get all products
@@ -54,9 +56,21 @@ router.patch("/update/:id", async (req, res) => {
         const result = await Product.findByIdAndUpdate(
             id, updatedData, options
         )
+        res.status(200).json(result);
     } catch (error) {
         console.log(error);
         res.status(400);
+    }
+})
+
+//delete a product by id
+router.delete("/delete/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const data = await Product.findByIdAndDelete(id);
+        res.status(200).send(`Document with ${data.name} has been deleted`);
+    } catch (error) {
+        console.log(error);
     }
 })
 
