@@ -5,9 +5,13 @@ const Product = require('../model/product');
 
 //homepage for product api
 router.get("/", (req, res) => {
-    res.status(200).json({
-        message: "Welcome to Product api home page"
-    });
+    try {
+        res.status(200).json({
+            message: "Welcome to Product REST API home page"
+        });
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 //get all products
@@ -45,7 +49,7 @@ router.post("/save", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-});
+})
 
 //update a product by id
 router.patch("/update/:id", async (req, res) => {
