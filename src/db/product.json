@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Iphone",
+        "price": 56000,
+        "feature": true,
+        "company": "apple"
+    },
+    {
+        "name": "Iphone10",
+        "price": 90000,
+        "feature": true,
+        "company": "apple"
+    },
+    {
+        "name": "Apple Watch",
+        "price": 70000,
+        "feature": true,
+        "company": "apple"
+    },
+    {
+        "name": "Mi A1",
+        "price": 13000,
+        "company": "redmi",
+        "rating": 4.8
+    },
+    {
+        "name": "OnePlus Nord",
+        "price": 30000,
+        "company": "oneplus"
+    },
+    {
+        "name": "Dell Latitude",
+        "price": 95000,
+        "company": "dell",
+        "rating": 4.7
+    },
+    {
+        "name": "Hp Pavilion",
+        "price": 100000,
+        "company": "hp"
+    },
+    {
+        "name": "Samsubg Galaxy 6",
+        "price": 64000,
+        "company": "samsung"
+    },
+    {
+        "name": "Redmi Note 9 Pro Max",
+        "price": 20000,
+        "company": "redmi",
+        "rating": 4.8
+    }
+]

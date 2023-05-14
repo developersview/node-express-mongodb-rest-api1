@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: [true, "price must be provided"]
     },
-    featured: {
+    feature: {
         type: Boolean,
         default: false
     },
@@ -24,8 +24,8 @@ const productSchema = new mongoose.Schema({
     company: {
         type: String,
         enum: {
-            values: ['apple', 'samsung', 'dell', 'redmi', 'hp'],
-            message: `${value} is not supported`
+            values: ['apple', 'samsung', 'dell', 'redmi', 'hp', 'oneplus'],
+            message: `value is not supported`
         }
     }
 });

@@ -1,9 +1,25 @@
+const Product = require('../model/product');
+
 const getAllProducts = async (req, res) => {
-    res.status(200).json({ message: "Get All products" });
+    const myData = await Product.find({});
+    res.status(200).json(myData);
 };
 
-const getAllProductsTesting = async (req, res) => {
-    res.status(200).json({ message: "Get All products testing" });
-};
+const saveProduct = async (req, res) => {
+    const data = new Product({
+        name: req.body.name,
+        price: req.body.price,
+        rating: req.body.rating,
+        company: req.body.company,
+    })
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave);
 
-module.exports = { getAllProducts, getAllProductsTesting };
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+module.exports = { getAllProducts, saveProduct };
